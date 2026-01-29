@@ -32,6 +32,8 @@
         body { background-color: #050505; color: #e5e7eb; }
         .hero-gradient { background: radial-gradient(circle at center, rgba(16, 185, 129, 0.15) 0%, rgba(0,0,0,0) 60%); }
         .fomo-gradient { background: linear-gradient(180deg, rgba(5,5,5,0) 0%, rgba(16, 185, 129, 0.05) 100%); }
+        .feature-card { transition: all 0.3s ease; }
+        .feature-card:hover { transform: translateY(-5px); }
     </style>
 </head>
 <body class="antialiased selection:bg-brand-accent/30 selection:text-white">
@@ -41,8 +43,8 @@
             <div class="text-2xl font-serif font-bold tracking-tighter text-white">FINCH</div>
             <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
                 <a href="#problem" class="hover:text-white transition-colors">The Problem</a>
-                <a href="#solution" class="hover:text-white transition-colors">Solution</a>
-                <a href="#comparison" class="hover:text-white transition-colors">Why Finch</a>
+                <a href="#deep-dive" class="hover:text-white transition-colors">The Architecture</a>
+                <a href="#contact" class="hover:text-white transition-colors">Deploy</a>
             </div>
             <a href="#contact" class="px-6 py-2 bg-brand-accent/10 text-brand-accent border border-brand-accent/20 rounded-full hover:bg-brand-accent hover:text-white transition-all font-mono text-sm">
                 Get Early Access
@@ -69,8 +71,8 @@
                 <a href="#contact" class="px-8 py-4 bg-brand-accent text-brand-dark font-bold text-lg rounded-lg hover:bg-emerald-400 transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)]">
                     Deploy Sovereign AI
                 </a>
-                <a href="#problem" class="px-8 py-4 border border-white/20 text-white font-medium text-lg rounded-lg hover:bg-white/5 transition-all">
-                    See the Risks
+                <a href="#deep-dive" class="px-8 py-4 border border-white/20 text-white font-medium text-lg rounded-lg hover:bg-white/5 transition-all">
+                    Explore Architecture
                 </a>
             </div>
         </div>
@@ -85,7 +87,7 @@
             </div>
             <div class="grid md:grid-cols-3 gap-8">
                 <!-- Card 1 -->
-                <div class="p-8 rounded-xl bg-white/5 border border-white/10 hover:border-brand-accent/50 transition-all group">
+                <div class="p-8 rounded-xl bg-white/5 border border-white/10 hover:border-brand-accent/50 transition-all group feature-card">
                     <div class="flex justify-between items-start mb-6">
                         <div class="text-4xl">🛑</div>
                         <div class="text-xs font-mono text-gray-500 uppercase">The Risk</div>
@@ -101,7 +103,7 @@
                 </div>
 
                 <!-- Card 2 -->
-                <div class="p-8 rounded-xl bg-white/5 border border-white/10 hover:border-brand-accent/50 transition-all group">
+                <div class="p-8 rounded-xl bg-white/5 border border-white/10 hover:border-brand-accent/50 transition-all group feature-card">
                     <div class="flex justify-between items-start mb-6">
                         <div class="text-4xl">🧟</div>
                         <div class="text-xs font-mono text-gray-500 uppercase">The Waste</div>
@@ -117,7 +119,7 @@
                 </div>
 
                 <!-- Card 3 -->
-                <div class="p-8 rounded-xl bg-white/5 border border-white/10 hover:border-brand-accent/50 transition-all group">
+                <div class="p-8 rounded-xl bg-white/5 border border-white/10 hover:border-brand-accent/50 transition-all group feature-card">
                     <div class="flex justify-between items-start mb-6">
                         <div class="text-4xl">😵‍💫</div>
                         <div class="text-xs font-mono text-gray-500 uppercase">The Bottleneck</div>
@@ -176,57 +178,180 @@
         </div>
     </section>
 
-    <!-- Comparison Table (Why Finch) -->
-    <section id="comparison" class="py-24 bg-brand-surface">
+    <!-- Deep Dive: The 6 Advantages -->
+    <section id="deep-dive" class="py-24 bg-brand-surface">
         <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl font-serif text-white mb-4">Why Finch Wins</h2>
-                <p class="text-gray-500 font-mono text-sm uppercase tracking-widest">Specialized OS vs. Generalist Wrappers</p>
+            <div class="text-center mb-20">
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-4">The Finch Architecture</h2>
+                <p class="text-gray-500 font-mono text-sm uppercase tracking-widest">Built for the Enterprise. Powered by Intelligence.</p>
             </div>
 
-            <div class="overflow-x-auto">
-                <table class="w-full text-left border-collapse">
-                    <thead>
-                        <tr class="border-b border-gray-800">
-                            <th class="p-4 text-gray-500 font-mono text-xs uppercase">Feature</th>
-                            <th class="p-4 text-gray-400 font-bold">Legacy GRC (Archer/Oracle)</th>
-                            <th class="p-4 text-red-400 font-bold">Public AI (ChatGPT/Harvey)</th>
-                            <th class="p-4 text-brand-accent font-bold bg-brand-accent/5 border-t-2 border-brand-accent">FINCH (Sovereign OS)</th>
-                        </tr>
-                    </thead>
-                    <tbody class="text-sm">
-                        <tr class="border-b border-gray-800 hover:bg-white/5">
-                            <td class="p-4 text-gray-300 font-bold">Deployment</td>
-                            <td class="p-4 text-gray-500">Cloud / Rigid On-Prem</td>
-                            <td class="p-4 text-gray-500">Public Cloud Only</td>
-                            <td class="p-4 text-white bg-brand-accent/5 font-bold">Your VPC / Air-Gapped</td>
-                        </tr>
-                        <tr class="border-b border-gray-800 hover:bg-white/5">
-                            <td class="p-4 text-gray-300 font-bold">Data Privacy</td>
-                            <td class="p-4 text-gray-500">High</td>
-                            <td class="p-4 text-red-500">None (Training Risk) ⚠</td>
-                            <td class="p-4 text-white bg-brand-accent/5 font-bold">Zero Egress (Sovereign)</td>
-                        </tr>
-                        <tr class="border-b border-gray-800 hover:bg-white/5">
-                            <td class="p-4 text-gray-300 font-bold">Logic</td>
-                            <td class="p-4 text-gray-500">Static Rules</td>
-                            <td class="p-4 text-red-500">Hallucinations ⚠</td>
-                            <td class="p-4 text-white bg-brand-accent/5 font-bold">AI + Deterministic Plugins</td>
-                        </tr>
-                        <tr class="border-b border-gray-800 hover:bg-white/5">
-                            <td class="p-4 text-gray-300 font-bold">Audit Trail</td>
-                            <td class="p-4 text-gray-500">Basic Logs</td>
-                            <td class="p-4 text-gray-500">Black Box</td>
-                            <td class="p-4 text-white bg-brand-accent/5 font-bold">Zero-Knowledge Proofs</td>
-                        </tr>
-                        <tr class="hover:bg-white/5">
-                            <td class="p-4 text-gray-300 font-bold">Time-to-Value</td>
-                            <td class="p-4 text-gray-500">6-18 Months</td>
-                            <td class="p-4 text-gray-500">Minutes</td>
-                            <td class="p-4 text-white bg-brand-accent/5 font-bold">Days (Pre-integrated)</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <!-- Block 1: Deployment -->
+            <div class="grid md:grid-cols-2 gap-12 items-center py-16 border-b border-white/5">
+                <div class="order-2 md:order-1">
+                    <div class="text-brand-blue font-mono text-xs mb-4">01. DEPLOYMENT</div>
+                    <h3 class="text-3xl font-serif text-white mb-6">Flexible Sovereignty</h3>
+                    <p class="text-gray-400 mb-8 text-lg leading-relaxed">
+                        Start on Public AI for speed. Move to Private VPC for compliance. Deploy On-Premise for full sovereignty. One product that grows with you from Series A to IPO.
+                    </p>
+                    <div class="bg-white/5 rounded-lg p-6 border border-white/10 font-mono text-sm space-y-4">
+                        <div class="flex justify-between items-center opacity-50">
+                            <span>Legacy GRC</span>
+                            <span class="text-red-400 text-xs">ON-PREM ONLY (Rigid)</span>
+                        </div>
+                        <div class="flex justify-between items-center opacity-50">
+                            <span>Public AI</span>
+                            <span class="text-red-400 text-xs">CLOUD ONLY (Risk)</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-2 border-t border-white/10">
+                            <span class="text-white font-bold">Finch OS</span>
+                            <span class="text-brand-blue font-bold text-xs">HYBRID / AIR-GAPPED</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 h-64 bg-gradient-to-br from-blue-900/20 to-brand-surface rounded-xl border border-white/10 flex items-center justify-center">
+                    <div class="text-6xl">☁️ ↔️ 🏢</div>
+                </div>
+            </div>
+
+            <!-- Block 2: Logic (AI + Plugins) -->
+            <div class="grid md:grid-cols-2 gap-12 items-center py-16 border-b border-white/5">
+                <div class="h-64 bg-gradient-to-br from-purple-900/20 to-brand-surface rounded-xl border border-white/10 flex items-center justify-center">
+                     <div class="text-6xl">🤖 + ⚡</div>
+                </div>
+                <div>
+                    <div class="text-brand-purple font-mono text-xs mb-4">02. DECISION LOGIC</div>
+                    <h3 class="text-3xl font-serif text-white mb-6">AI + Deterministic Code</h3>
+                    <p class="text-gray-400 mb-8 text-lg leading-relaxed">
+                        We don't trust LLMs with everything. Write Python/JS plug-ins for strict rules (fast, cheap, accurate). Reserve the AI for complex edge cases that require reasoning.
+                    </p>
+                    <div class="bg-white/5 rounded-lg p-6 border border-white/10 font-mono text-sm space-y-4">
+                        <div class="flex justify-between items-center opacity-50">
+                            <span>Legacy GRC</span>
+                            <span class="text-red-400 text-xs">MANUAL RULES (Dumb)</span>
+                        </div>
+                        <div class="flex justify-between items-center opacity-50">
+                            <span>Public AI</span>
+                            <span class="text-red-400 text-xs">BLACK BOX (Hallucinations)</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-2 border-t border-white/10">
+                            <span class="text-white font-bold">Finch OS</span>
+                            <span class="text-brand-purple font-bold text-xs">HYBRID INTELIGENCE</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Block 3: Living Vault -->
+            <div class="grid md:grid-cols-2 gap-12 items-center py-16 border-b border-white/5">
+                <div class="order-2 md:order-1">
+                    <div class="text-brand-accent font-mono text-xs mb-4">03. KNOWLEDGE</div>
+                    <h3 class="text-3xl font-serif text-white mb-6">The Living Vault</h3>
+                    <p class="text-gray-400 mb-8 text-lg leading-relaxed">
+                        Your compliance policies become queryable knowledge. The AI auto-diffs new regulations against your internal manuals and flags compliance gaps in real-time.
+                    </p>
+                    <div class="bg-white/5 rounded-lg p-6 border border-white/10 font-mono text-sm space-y-4">
+                        <div class="flex justify-between items-center opacity-50">
+                            <span>Legacy GRC</span>
+                            <span class="text-red-400 text-xs">STATIC PDFs</span>
+                        </div>
+                        <div class="flex justify-between items-center opacity-50">
+                            <span>Public AI</span>
+                            <span class="text-red-400 text-xs">GENERIC KNOWLEDGE</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-2 border-t border-white/10">
+                            <span class="text-white font-bold">Finch OS</span>
+                            <span class="text-brand-accent font-bold text-xs">ACTIVE POLICY CHECK</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 h-64 bg-gradient-to-br from-emerald-900/20 to-brand-surface rounded-xl border border-white/10 flex items-center justify-center">
+                    <div class="text-6xl">📚 → 🧠</div>
+                </div>
+            </div>
+
+            <!-- Block 4: Cryptographic Trail -->
+            <div class="grid md:grid-cols-2 gap-12 items-center py-16 border-b border-white/5">
+                <div class="h-64 bg-gradient-to-br from-yellow-900/20 to-brand-surface rounded-xl border border-white/10 flex items-center justify-center">
+                    <div class="text-6xl">🔒 🔗</div>
+                </div>
+                <div>
+                    <div class="text-yellow-500 font-mono text-xs mb-4">04. AUDITABILITY</div>
+                    <h3 class="text-3xl font-serif text-white mb-6">Cryptographic Truth</h3>
+                    <p class="text-gray-400 mb-8 text-lg leading-relaxed">
+                        Every decision is cryptographically signed and hashed. Generate Zero-Knowledge Proofs (ZKP) to prove compliance to auditors without exposing sensitive PII data.
+                    </p>
+                    <div class="bg-white/5 rounded-lg p-6 border border-white/10 font-mono text-sm space-y-4">
+                        <div class="flex justify-between items-center opacity-50">
+                            <span>Legacy GRC</span>
+                            <span class="text-red-400 text-xs">EDITABLE SQL LOGS</span>
+                        </div>
+                        <div class="flex justify-between items-center opacity-50">
+                            <span>Public AI</span>
+                            <span class="text-red-400 text-xs">NO AUDIT TRAIL</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-2 border-t border-white/10">
+                            <span class="text-white font-bold">Finch OS</span>
+                            <span class="text-yellow-500 font-bold text-xs">IMMUTABLE CHAIN</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Block 5: Learning Memory -->
+            <div class="grid md:grid-cols-2 gap-12 items-center py-16 border-b border-white/5">
+                <div class="order-2 md:order-1">
+                    <div class="text-blue-400 font-mono text-xs mb-4">05. ADAPTABILITY</div>
+                    <h3 class="text-3xl font-serif text-white mb-6">Learning Memory</h3>
+                    <p class="text-gray-400 mb-8 text-lg leading-relaxed">
+                        The system learns from your officers. When you override an AI recommendation, Finch adjusts its weights. It doesn't just get smarter—it gets smarter about *your* business.
+                    </p>
+                    <div class="bg-white/5 rounded-lg p-6 border border-white/10 font-mono text-sm space-y-4">
+                        <div class="flex justify-between items-center opacity-50">
+                            <span>Legacy GRC</span>
+                            <span class="text-red-400 text-xs">DOES NOT LEARN</span>
+                        </div>
+                        <div class="flex justify-between items-center opacity-50">
+                            <span>Public AI</span>
+                            <span class="text-red-400 text-xs">LEARNS GLOBALLY</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-2 border-t border-white/10">
+                            <span class="text-white font-bold">Finch OS</span>
+                            <span class="text-blue-400 font-bold text-xs">PERSONALIZED WEIGHTS</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="order-1 md:order-2 h-64 bg-gradient-to-br from-blue-900/20 to-brand-surface rounded-xl border border-white/10 flex items-center justify-center">
+                    <div class="text-6xl">🎓 📈</div>
+                </div>
+            </div>
+
+            <!-- Block 6: Time to Value -->
+            <div class="grid md:grid-cols-2 gap-12 items-center py-16">
+                <div class="h-64 bg-gradient-to-br from-red-900/20 to-brand-surface rounded-xl border border-white/10 flex items-center justify-center">
+                    <div class="text-6xl">🚀 ⏱️</div>
+                </div>
+                <div>
+                    <div class="text-red-400 font-mono text-xs mb-4">06. VELOCITY</div>
+                    <h3 class="text-3xl font-serif text-white mb-6">Days, Not Years</h3>
+                    <p class="text-gray-400 mb-8 text-lg leading-relaxed">
+                        Legacy implementation takes 18 months. Finch deploys in hours. Pre-built integrations with SumSub, Veriff, and Jumio let you run in "Shadow Mode" immediately.
+                    </p>
+                    <div class="bg-white/5 rounded-lg p-6 border border-white/10 font-mono text-sm space-y-4">
+                        <div class="flex justify-between items-center opacity-50">
+                            <span>Legacy GRC</span>
+                            <span class="text-red-400 text-xs">6-18 MONTHS</span>
+                        </div>
+                        <div class="flex justify-between items-center opacity-50">
+                            <span>Public AI</span>
+                            <span class="text-red-400 text-xs">FAST BUT LIMITED</span>
+                        </div>
+                        <div class="flex justify-between items-center pt-2 border-t border-white/10">
+                            <span class="text-white font-bold">Finch OS</span>
+                            <span class="text-red-400 font-bold text-xs">DAYS + INTEGRATIONS</span>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -236,7 +361,6 @@
         <div class="max-w-7xl mx-auto px-6 text-center">
             <p class="text-gray-600 font-mono text-xs uppercase tracking-widest mb-8">Enterprise-Grade Security Standards</p>
             <div class="flex flex-wrap justify-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                <!-- Simple text badges for MVP -->
                 <div class="flex items-center gap-2 text-white font-bold text-xl"><span class="text-blue-500">SOC</span>2 Ready</div>
                 <div class="flex items-center gap-2 text-white font-bold text-xl"><span class="text-blue-500">GDPR</span> Compliant</div>
                 <div class="flex items-center gap-2 text-white font-bold text-xl"><span class="text-blue-500">AWS</span> Private Link</div>
