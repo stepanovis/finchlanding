@@ -3,21 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>FINCH | Compliance Officer Copilot</title>
+    <title>FINCH | Sovereign Compliance OS</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Inter:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        brand: {
-                            dark: '#050505',
-                            surface: '#0A0A0A',
-                            accent: '#10B981', // Emerald
-                            blue: '#3B82F6',
-                            purple: '#8B5CF6'
-                        }
+                        bg: '#050505',
+                        border: '#1F2937', // Gray-800
+                        accent: '#10B981', // Emerald
                     },
                     fontFamily: {
                         sans: ['Inter', 'sans-serif'],
@@ -29,365 +25,395 @@
         }
     </script>
     <style>
-        body { background-color: #050505; color: #e5e7eb; }
-        .hero-gradient { background: radial-gradient(circle at center, rgba(16, 185, 129, 0.15) 0%, rgba(0,0,0,0) 60%); }
-        .fomo-gradient { background: linear-gradient(180deg, rgba(5,5,5,0) 0%, rgba(16, 185, 129, 0.05) 100%); }
-        .feature-card { transition: all 0.3s ease; }
-        .feature-card:hover { transform: translateY(-5px); }
+        body { background-color: #050505; color: #D1D5DB; }
+        /* Remove default scrollbar */
+        ::-webkit-scrollbar { width: 0px; background: transparent; }
     </style>
 </head>
-<body class="antialiased selection:bg-brand-accent/30 selection:text-white">
-    <!-- Navbar -->
-    <nav class="fixed w-full z-50 bg-brand-dark/90 backdrop-blur-md border-b border-white/10">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <div class="text-2xl font-serif font-bold tracking-tighter text-white">FINCH</div>
-            <div class="hidden md:flex gap-8 text-sm font-medium text-gray-400">
-                <a href="#problem" class="hover:text-white transition-colors">The Problem</a>
-                <a href="#deep-dive" class="hover:text-white transition-colors">The Architecture</a>
-                <a href="#contact" class="hover:text-white transition-colors">Deploy</a>
-            </div>
-            <a href="#contact" class="px-6 py-2 bg-brand-accent/10 text-brand-accent border border-brand-accent/20 rounded-full hover:bg-brand-accent hover:text-white transition-all font-mono text-sm">
-                Get Early Access
-            </a>
+<body class="antialiased border-x border-border max-w-[1440px] mx-auto min-h-screen flex flex-col">
+    
+    <!-- HEADER -->
+    <header class="h-20 border-b border-border flex items-center justify-between px-8 bg-bg sticky top-0 z-50">
+        <div class="font-serif text-2xl text-white tracking-tight">FINCH</div>
+        <div class="font-mono text-xs text-gray-500 uppercase tracking-widest hidden md:block">
+            System Status: <span class="text-accent">Operational</span>
         </div>
-    </nav>
+        <a href="#contact" class="font-mono text-xs border border-white/20 px-4 py-2 hover:bg-white hover:text-black transition-colors uppercase">
+            Request Deploy
+        </a>
+    </header>
 
-    <!-- Hero Section -->
-    <section class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden">
-        <div class="hero-gradient absolute inset-0 w-full h-full pointer-events-none"></div>
-        <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
-            <div class="inline-block mb-6 px-4 py-1 rounded-full border border-blue-500/30 bg-blue-900/10 text-blue-400 font-mono text-xs tracking-widest uppercase">
-                For Regulated Enterprises Only
+    <!-- HERO: THE DEFINITION -->
+    <section class="py-32 px-8 border-b border-border">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="inline-block font-mono text-accent text-xs mb-8 uppercase tracking-widest border border-accent/20 px-3 py-1 rounded-full">
+                Infrastructure v1.0
             </div>
-            <h1 class="text-5xl md:text-7xl font-serif font-bold text-white mb-8 leading-tight">
-                Run LLMs On-Premise.<br>
-                <span class="text-brand-accent">Zero Data Leakage.</span>
+            <h1 class="text-5xl md:text-8xl font-serif text-white mb-8 leading-tight tracking-tight">
+                COMPLIANCE OFFICER <br>
+                <span class="text-gray-500">COPILOT</span>
             </h1>
-            <p class="text-xl md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-                The only Compliance Officer Copilot designed for the paranoid. <br>
-                Convert static policies into an active defense system—without sending a single byte to the cloud.
+            <p class="text-xl md:text-2xl text-gray-400 font-light leading-relaxed max-w-3xl mx-auto mb-16">
+                On-Prem Legal Infrastructure for Regulated Enterprises.
             </p>
-            <div class="flex flex-col md:flex-row gap-4 justify-center">
-                <a href="#contact" class="px-8 py-4 bg-brand-accent text-brand-dark font-bold text-lg rounded-lg hover:bg-emerald-400 transition-all shadow-[0_0_20px_rgba(16,185,129,0.3)]">
-                    Deploy Sovereign AI
-                </a>
-                <a href="#deep-dive" class="px-8 py-4 border border-white/20 text-white font-medium text-lg rounded-lg hover:bg-white/5 transition-all">
-                    Explore Architecture
-                </a>
+            
+            <!-- Deck Feature Bullets -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-3xl mx-auto border-t border-border pt-12">
+                <div>
+                    <div class="font-mono text-xs text-accent uppercase tracking-widest mb-2">Living Vault</div>
+                    <div class="text-sm text-gray-500">No zombie policies</div>
+                </div>
+                <div class="md:border-l border-border pl-8">
+                    <div class="font-mono text-xs text-accent uppercase tracking-widest mb-2">Local AI Memory</div>
+                    <div class="text-sm text-gray-500">Private and custom</div>
+                </div>
+                <div class="md:border-l border-border pl-8">
+                    <div class="font-mono text-xs text-accent uppercase tracking-widest mb-2">ZK Proofs</div>
+                    <div class="text-sm text-gray-500">Verify without exposing</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Problem/Solution Reframe (The Mirror) -->
-    <section id="problem" class="py-24 bg-brand-surface border-t border-white/5">
-        <div class="max-w-7xl mx-auto px-6">
+    <!-- MODULE 01 -->
+    <section class="py-24 px-8 border-b border-border">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <div class="font-mono text-4xl text-gray-800 mb-6">01</div>
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Total Data Sovereignty</h2>
+                <p class="text-xl text-gray-400 mb-8 leading-relaxed font-light">
+                    Stop Shadow AI usage. Finch runs entirely within your perimeter (Customer VPC or Air-Gapped), guaranteeing 100% data safety. 
+                </p>
+                <div class="space-y-4">
+                    <p class="text-gray-500">The model moves to your data, not the other way around. No third-party API calls, no leakage risk.</p>
+                    <ul class="font-mono text-sm text-gray-500 space-y-3 uppercase pt-4 border-t border-border">
+                        <li class="flex items-center gap-3"><span class="text-accent">●</span> Closed AI Model</li>
+                        <li class="flex items-center gap-3"><span class="text-accent">●</span> Air-Gapped Ready</li>
+                        <li class="flex items-center gap-3"><span class="text-accent">●</span> Zero Data Egress</li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Visual Placeholder -->
+            <div class="h-96 w-full bg-white/5 border border-border rounded-lg flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/5 via-transparent to-transparent opacity-50"></div>
+                <div class="font-mono text-xs text-gray-600 uppercase tracking-widest">Architecture Diagram</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DEPLOYMENT OPTIONS -->
+    <section class="py-24 px-8 border-b border-border bg-white/[0.02]">
+        <div class="max-w-6xl mx-auto">
             <div class="text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-serif text-white mb-4">Stop Fighting the Future</h2>
-                <p class="text-gray-400">Your current tools are either too safe (and useless) or too smart (and dangerous).</p>
+                <h2 class="font-serif text-4xl text-white mb-4">Deployment Topology</h2>
+                <p class="text-gray-400 font-light max-w-2xl mx-auto">
+                    Start where you are. Grow without migration pain. <br>
+                    Finch is the only OS that supports seamless transition between modes.
+                </p>
             </div>
+            
             <div class="grid md:grid-cols-3 gap-8">
-                <!-- Card 1 -->
-                <div class="p-8 rounded-xl bg-white/5 border border-white/10 hover:border-brand-accent/50 transition-all group feature-card">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="text-4xl">🛑</div>
-                        <div class="text-xs font-mono text-gray-500 uppercase">The Risk</div>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">"ChatGPT is Banned"</h3>
-                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                        65% of banks block cloud AI due to data leakage. Your employees use it anyway (Shadow AI), exposing PII to the public web.
+                <!-- Option 1: Public Cloud -->
+                <div class="border border-border p-8 bg-bg relative group">
+                    <div class="font-mono text-xs text-gray-500 uppercase tracking-widest mb-4">Stage: Start</div>
+                    <h3 class="text-2xl font-serif text-white mb-4">Public Cloud</h3>
+                    <p class="text-sm text-gray-400 mb-6 min-h-[60px]">
+                        Fastest way to MVP. Low cost, instant setup. Ideal for testing workflows before sensitive data ingestion.
                     </p>
-                    <div class="pt-6 border-t border-white/10">
-                        <p class="text-brand-accent font-mono text-xs uppercase tracking-wide mb-1">The Finch Solution</p>
-                        <p class="text-white text-sm font-medium">Sovereign Container. We bring the model to your data (On-Prem), not your data to the model.</p>
+                    <div class="pt-6 border-t border-border text-xs font-mono text-gray-500">
+                        Warning: <span class="text-red-400">Data Egress Risk</span>
                     </div>
                 </div>
 
-                <!-- Card 2 -->
-                <div class="p-8 rounded-xl bg-white/5 border border-white/10 hover:border-brand-accent/50 transition-all group feature-card">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="text-4xl">🧟</div>
-                        <div class="text-xs font-mono text-gray-500 uppercase">The Waste</div>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Zombie Policies</h3>
-                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                        Compliance rules live in static PDFs. They are updated once a year and ignored every day.
+                <!-- Option 2: Private VPC -->
+                <div class="border border-accent p-8 bg-accent/5 relative shadow-[0_0_30px_rgba(16,185,129,0.1)]">
+                    <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-accent text-black px-3 py-0.5 text-[10px] font-mono font-bold uppercase tracking-widest">Recommended</div>
+                    <div class="font-mono text-xs text-accent uppercase tracking-widest mb-4">Stage: Scale</div>
+                    <h3 class="text-2xl font-serif text-white mb-4">Private VPC</h3>
+                    <p class="text-sm text-gray-400 mb-6 min-h-[60px]">
+                        Your cloud (AWS/Azure). The model runs in your isolated container. Best balance of security and ease.
                     </p>
-                    <div class="pt-6 border-t border-white/10">
-                        <p class="text-brand-accent font-mono text-xs uppercase tracking-wide mb-1">The Finch Solution</p>
-                        <p class="text-white text-sm font-medium">Living Vault. We vectorize your PDFs into active, real-time checkpoints for every transaction.</p>
+                    <div class="pt-6 border-t border-accent/20 text-xs font-mono text-accent">
+                        Security: <span class="text-white">Zero Egress</span>
                     </div>
                 </div>
 
-                <!-- Card 3 -->
-                <div class="p-8 rounded-xl bg-white/5 border border-white/10 hover:border-brand-accent/50 transition-all group feature-card">
-                    <div class="flex justify-between items-start mb-6">
-                        <div class="text-4xl">😵‍💫</div>
-                        <div class="text-xs font-mono text-gray-500 uppercase">The Bottleneck</div>
-                    </div>
-                    <h3 class="text-xl font-bold text-white mb-2">Manual Excel Hell</h3>
-                    <p class="text-gray-400 text-sm mb-6 leading-relaxed">
-                        Officers drown in manual reviews. Human error scales linearly with volume.
+                <!-- Option 3: On-Premise -->
+                <div class="border border-border p-8 bg-bg relative group">
+                    <div class="font-mono text-xs text-gray-500 uppercase tracking-widest mb-4">Stage: Enterprise</div>
+                    <h3 class="text-2xl font-serif text-white mb-4">Air-Gapped</h3>
+                    <p class="text-sm text-gray-400 mb-6 min-h-[60px]">
+                        Physical hardware within your firewall. No internet connection required. Maximum sovereignty.
                     </p>
-                    <div class="pt-6 border-t border-white/10">
-                        <p class="text-brand-accent font-mono text-xs uppercase tracking-wide mb-1">The Finch Solution</p>
-                        <p class="text-white text-sm font-medium">AI + Deterministic Rules. Automate 90% of routine checks; focus humans on the edge cases.</p>
+                    <div class="pt-6 border-t border-border text-xs font-mono text-gray-500">
+                        Security: <span class="text-white">Max (Mil-Spec)</span>
                     </div>
+                </div>
+            </div>
+
+            <!-- Migration Note -->
+            <div class="mt-12 text-center border-t border-border pt-8">
+                 <p class="font-mono text-xs text-gray-500 uppercase tracking-widest mb-2">Why not just start On-Prem?</p>
+                 <p class="text-gray-400 text-sm max-w-3xl mx-auto italic">
+                    "On-premise is expensive and complex on day one. But lock-in is expensive forever. <br>
+                    Choose a solution that lets you start cheap on cloud, but guarantees a migration path to sovereignty when you grow."
+                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODULE 02 -->
+    <section class="py-24 px-8 border-b border-border">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1 h-96 w-full bg-white/5 border border-border rounded-lg flex items-center justify-center relative overflow-hidden">
+                 <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-blue-500/5 via-transparent to-transparent opacity-50"></div>
+                <div class="font-mono text-xs text-gray-600 uppercase tracking-widest">Vault Interface</div>
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="font-mono text-4xl text-gray-800 mb-6">02</div>
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Active Policy Enforcement</h2>
+                <p class="text-xl text-gray-400 mb-8 leading-relaxed font-light">
+                    Humans forget policies; AI never does. Finch vectorizes your static manuals (PDFs) into an active layer that checks every single request.
+                </p>
+                <div class="space-y-4">
+                    <p class="text-gray-500">The system proactively flags violations that a tired human officer might miss, ensuring your documentation is actually *used*, not just stored.</p>
+                    <ul class="font-mono text-sm text-gray-500 space-y-3 uppercase pt-4 border-t border-border">
+                        <li class="flex items-center gap-3"><span class="text-accent">●</span> 100% Policy Recall</li>
+                        <li class="flex items-center gap-3"><span class="text-accent">●</span> Automated Compliance Check</li>
+                        <li class="flex items-center gap-3"><span class="text-accent">●</span> PDF-to-Vector Pipeline</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- FOMO Section (The Market Edge) -->
-    <section class="py-24 bg-brand-dark border-y border-white/5 relative overflow-hidden">
-        <div class="fomo-gradient absolute inset-0 pointer-events-none"></div>
-        <div class="max-w-7xl mx-auto px-6 relative z-10">
-            <div class="grid md:grid-cols-2 gap-16 items-center">
-                <div>
-                    <div class="inline-block px-3 py-1 bg-brand-purple/20 text-brand-purple border border-brand-purple/30 rounded text-xs font-mono mb-6">MARKET VELOCITY</div>
-                    <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">The Compliance Gap is Widening.</h2>
-                    <p class="text-xl text-gray-300 mb-6 leading-relaxed">
-                        Regulatory complexity is growing exponentially. Human capacity is linear.
-                    </p>
-                    <p class="text-gray-400 mb-8 leading-relaxed">
-                        The first enterprises to deploy Sovereign AI will process checks <span class="text-white font-bold">100x faster</span> than manual competitors. While they wait 18 months to deploy "safe" legacy software, you can be up and running in days.
-                    </p>
-                    <div class="flex items-center gap-4 text-sm font-mono text-gray-500">
-                        <span>Don't get left behind.</span>
-                        <span class="h-px flex-1 bg-gray-800"></span>
-                    </div>
+    <!-- MODULE 03 -->
+    <section class="py-24 px-8 border-b border-border bg-white/[0.02]">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div>
+                <div class="font-mono text-4xl text-gray-800 mb-6">03</div>
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Programmable Workflow</h2>
+                <p class="text-xl text-gray-400 mb-8 leading-relaxed font-light">
+                    No vendor lock-in. You own the logic. Write custom Python/JS plugins to handle routine processes deterministically.
+                </p>
+                <div class="space-y-4">
+                    <p class="text-gray-500">Reserve the LLM for complex reasoning tasks. You have the flexibility to cover 100% of your compliance process your way.</p>
+                    <ul class="font-mono text-sm text-gray-500 space-y-3 uppercase pt-4 border-t border-border">
+                        <li class="flex items-center gap-3"><span class="text-accent">●</span> Custom Code Plugins</li>
+                        <li class="flex items-center gap-3"><span class="text-accent">●</span> Hybrid Logic (Code + AI)</li>
+                        <li class="flex items-center gap-3"><span class="text-accent">●</span> No Black Box Dependencies</li>
+                    </ul>
                 </div>
-                <!-- Abstract Viz -->
-                <div class="relative h-64 md:h-80 bg-gray-900 rounded-lg border border-gray-800 p-8 flex items-end gap-4 overflow-hidden">
-                    <!-- Legacy Growth -->
-                    <div class="w-1/3 h-1/3 bg-gray-800 rounded-t relative group">
-                        <div class="absolute -top-8 left-0 w-full text-center text-xs text-gray-500 font-mono">Manual</div>
-                    </div>
-                    <!-- Finch Growth -->
-                    <div class="w-1/3 h-full bg-gradient-to-t from-brand-accent/20 to-brand-accent rounded-t relative group animate-pulse">
-                         <div class="absolute -top-8 left-0 w-full text-center text-xs text-brand-accent font-mono font-bold">AI-Powered</div>
-                    </div>
-                    <!-- Regulation Line -->
-                    <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
-                        <svg class="w-full h-full" preserveAspectRatio="none">
-                            <path d="M0,300 C100,280 200,100 400,0" fill="none" stroke="#EF4444" stroke-width="2" stroke-dasharray="5,5" />
-                        </svg>
-                        <div class="absolute top-4 right-4 text-red-500 text-xs font-mono">Regulatory Complexity</div>
-                    </div>
+            </div>
+            <div class="h-96 w-full bg-bg border border-border rounded-lg flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-500/5 via-transparent to-transparent opacity-50"></div>
+                <div class="font-mono text-xs text-gray-600 uppercase tracking-widest">Code Editor View</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODULE 04 -->
+    <section class="py-24 px-8 border-b border-border">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-2 md:order-1 h-96 w-full bg-white/5 border border-border rounded-lg flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-yellow-500/5 via-transparent to-transparent opacity-50"></div>
+                <div class="font-mono text-xs text-gray-600 uppercase tracking-widest">Chain Explorer</div>
+            </div>
+            <div class="order-1 md:order-2">
+                <div class="font-mono text-4xl text-gray-800 mb-6">04</div>
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Audit-Ready Reporting</h2>
+                <p class="text-xl text-gray-400 mb-8 leading-relaxed font-light">
+                    Generate "Regulatory Ready" reports instantly. Every decision leaves an immutable cryptographic trail (On-chain).
+                </p>
+                <div class="space-y-4">
+                    <p class="text-gray-500">Use Zero-Knowledge Proofs (ZKP) to prove compliance to auditors without exposing the underlying sensitive data.</p>
+                    <ul class="font-mono text-sm text-gray-500 space-y-3 uppercase pt-4 border-t border-border">
+                        <li class="flex items-center gap-3"><span class="text-accent">●</span> Immutable Audit Trail</li>
+                        <li class="flex items-center gap-3"><span class="text-accent">●</span> Instant Report Generation</li>
+                        <li class="flex items-center gap-3"><span class="text-accent">●</span> Zero-Knowledge Proofs</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Deep Dive: The 6 Advantages -->
-    <section id="deep-dive" class="py-24 bg-brand-surface">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-20">
-                <h2 class="text-4xl md:text-5xl font-serif text-white mb-4">The Finch Architecture</h2>
-                <p class="text-gray-500 font-mono text-sm uppercase tracking-widest">Built for the Enterprise. Powered by Intelligence.</p>
-            </div>
-
-            <!-- Block 1: Deployment -->
-            <div class="grid md:grid-cols-2 gap-12 items-center py-16 border-b border-white/5">
-                <div class="order-2 md:order-1">
-                    <div class="text-brand-blue font-mono text-xs mb-4">01. DEPLOYMENT</div>
-                    <h3 class="text-3xl font-serif text-white mb-6">Flexible Sovereignty</h3>
-                    <p class="text-gray-400 mb-8 text-lg leading-relaxed">
-                        Start on Public AI for speed. Move to Private VPC for compliance. Deploy On-Premise for full sovereignty. One product that grows with you from Series A to IPO.
-                    </p>
-                    <div class="bg-white/5 rounded-lg p-6 border border-white/10 font-mono text-sm space-y-4">
-                        <div class="flex justify-between items-center opacity-50">
-                            <span>Legacy GRC</span>
-                            <span class="text-red-400 text-xs">ON-PREM ONLY (Rigid)</span>
-                        </div>
-                        <div class="flex justify-between items-center opacity-50">
-                            <span>Public AI</span>
-                            <span class="text-red-400 text-xs">CLOUD ONLY (Risk)</span>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-white/10">
-                            <span class="text-white font-bold">Finch OS</span>
-                            <span class="text-brand-blue font-bold text-xs">HYBRID / AIR-GAPPED</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 md:order-2 h-64 bg-gradient-to-br from-blue-900/20 to-brand-surface rounded-xl border border-white/10 flex items-center justify-center">
-                    <div class="text-6xl">☁️ ↔️ 🏢</div>
-                </div>
-            </div>
-
-            <!-- Block 2: Logic (AI + Plugins) -->
-            <div class="grid md:grid-cols-2 gap-12 items-center py-16 border-b border-white/5">
-                <div class="h-64 bg-gradient-to-br from-purple-900/20 to-brand-surface rounded-xl border border-white/10 flex items-center justify-center">
-                     <div class="text-6xl">🤖 + ⚡</div>
-                </div>
+    <!-- TRUST & COMPLIANCE -->
+    <section class="py-24 px-8 border-b border-border bg-bg">
+        <div class="max-w-6xl mx-auto">
+             <div class="grid md:grid-cols-2 gap-16 items-start">
                 <div>
-                    <div class="text-brand-purple font-mono text-xs mb-4">02. DECISION LOGIC</div>
-                    <h3 class="text-3xl font-serif text-white mb-6">AI + Deterministic Code</h3>
-                    <p class="text-gray-400 mb-8 text-lg leading-relaxed">
-                        We don't trust LLMs with everything. Write Python/JS plug-ins for strict rules (fast, cheap, accurate). Reserve the AI for complex edge cases that require reasoning.
+                    <h2 class="text-4xl font-serif text-white mb-6">Compatible with Global Regulation</h2>
+                    <p class="text-lg text-gray-400 mb-8 leading-relaxed">
+                        Finch is architected from day one to satisfy the most stringent data protection frameworks. We don't just "comply"—we provide the mathematical proof of compliance.
                     </p>
-                    <div class="bg-white/5 rounded-lg p-6 border border-white/10 font-mono text-sm space-y-4">
-                        <div class="flex justify-between items-center opacity-50">
-                            <span>Legacy GRC</span>
-                            <span class="text-red-400 text-xs">MANUAL RULES (Dumb)</span>
+                    <div class="grid grid-cols-2 gap-6 mt-12">
+                        <div>
+                            <div class="text-white font-bold mb-2">GDPR / CCPA / LGPD</div>
+                            <div class="text-sm text-gray-500">Met by default via Sovereign Container design. No PII cross-border transfer.</div>
                         </div>
-                        <div class="flex justify-between items-center opacity-50">
-                            <span>Public AI</span>
-                            <span class="text-red-400 text-xs">BLACK BOX (Hallucinations)</span>
+                         <div>
+                            <div class="text-white font-bold mb-2">SOC2 Type II</div>
+                            <div class="text-sm text-gray-500">Immutable logs and audit trails ensure you pass certification effortlessly.</div>
                         </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-white/10">
-                            <span class="text-white font-bold">Finch OS</span>
-                            <span class="text-brand-purple font-bold text-xs">HYBRID INTELIGENCE</span>
+                        <div>
+                            <div class="text-white font-bold mb-2">ISO 27001</div>
+                            <div class="text-sm text-gray-500">Infrastructure compatible with Information Security Management Systems.</div>
+                        </div>
+                        <div>
+                            <div class="text-white font-bold mb-2">FedRAMP / GovCloud</div>
+                            <div class="text-sm text-gray-500">Ready for deployment in restricted government cloud environments.</div>
                         </div>
                     </div>
+                </div>
+                <!-- Trust Visual -->
+                <div class="bg-white/5 border border-border p-8 rounded-lg">
+                    <div class="font-mono text-xs text-gray-500 uppercase tracking-widest mb-6 border-b border-border pb-4">Cryptographic Verification</div>
+                    <div class="space-y-4 font-mono text-sm">
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-400">Proof Type:</span>
+                            <span class="text-accent">zk-SNARK</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-400">Verification:</span>
+                            <span class="text-accent">On-Chain</span>
+                        </div>
+                        <div class="flex items-center justify-between">
+                            <span class="text-gray-400">PII Exposure:</span>
+                            <span class="text-accent">0.00%</span>
+                        </div>
+                        <div class="h-32 bg-black border border-border mt-6 flex items-center justify-center text-gray-700 text-xs">
+                            [ HASH VISUALIZATION ]
+                        </div>
+                        <div class="text-xs text-gray-500 text-center pt-2">
+                            Auditors verify the math, not the data.
+                        </div>
+                    </div>
+                </div>
+             </div>
+        </div>
+    </section>
+
+    <!-- MODULE 05 -->
+    <section class="py-24 px-8 border-b border-border bg-white/[0.02]">
+        <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-16 items-center">
+            <div class="order-1 md:order-2">
+                <div class="font-mono text-4xl text-gray-800 mb-6">05</div>
+                <h2 class="text-4xl md:text-5xl font-serif text-white mb-6">Persistent Institutional Memory</h2>
+                <p class="text-xl text-gray-400 mb-8 leading-relaxed font-light">
+                    Don't repeat yourself. Finch captures the reasoning behind every decision you make. Unlike stateless models that reset daily, it builds a permanent knowledge base.
+                </p>
+                <div class="space-y-4">
+                    <p class="text-gray-500">The system autonomously aligns itself with your specific business nuances and risk appetite over time, reducing manual corrections to zero.</p>
+                    <ul class="font-mono text-sm text-gray-500 space-y-3 uppercase pt-4 border-t border-border">
+                        <li class="flex items-center gap-3"><span class="text-accent">●</span> RLHF on Officer Actions</li>
+                        <li class="flex items-center gap-3"><span class="text-accent">●</span> Permanent Weight Adjustment</li>
+                        <li class="flex items-center gap-3"><span class="text-accent">●</span> Behavior-Based Learning</li>
+                    </ul>
                 </div>
             </div>
-
-            <!-- Block 3: Living Vault -->
-            <div class="grid md:grid-cols-2 gap-12 items-center py-16 border-b border-white/5">
-                <div class="order-2 md:order-1">
-                    <div class="text-brand-accent font-mono text-xs mb-4">03. KNOWLEDGE</div>
-                    <h3 class="text-3xl font-serif text-white mb-6">The Living Vault</h3>
-                    <p class="text-gray-400 mb-8 text-lg leading-relaxed">
-                        Your compliance policies become queryable knowledge. The AI auto-diffs new regulations against your internal manuals and flags compliance gaps in real-time.
-                    </p>
-                    <div class="bg-white/5 rounded-lg p-6 border border-white/10 font-mono text-sm space-y-4">
-                        <div class="flex justify-between items-center opacity-50">
-                            <span>Legacy GRC</span>
-                            <span class="text-red-400 text-xs">STATIC PDFs</span>
-                        </div>
-                        <div class="flex justify-between items-center opacity-50">
-                            <span>Public AI</span>
-                            <span class="text-red-400 text-xs">GENERIC KNOWLEDGE</span>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-white/10">
-                            <span class="text-white font-bold">Finch OS</span>
-                            <span class="text-brand-accent font-bold text-xs">ACTIVE POLICY CHECK</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="order-1 md:order-2 h-64 bg-gradient-to-br from-emerald-900/20 to-brand-surface rounded-xl border border-white/10 flex items-center justify-center">
-                    <div class="text-6xl">📚 → 🧠</div>
-                </div>
+            <div class="h-96 w-full bg-bg border border-border rounded-lg flex items-center justify-center relative overflow-hidden">
+                <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-accent/5 via-transparent to-transparent opacity-50"></div>
+                <div class="font-mono text-xs text-gray-600 uppercase tracking-widest">Training Graph</div>
             </div>
+        </div>
+    </section>
 
-            <!-- Block 4: Cryptographic Trail -->
-            <div class="grid md:grid-cols-2 gap-12 items-center py-16 border-b border-white/5">
-                <div class="h-64 bg-gradient-to-br from-yellow-900/20 to-brand-surface rounded-xl border border-white/10 flex items-center justify-center">
-                    <div class="text-6xl">🔒 🔗</div>
-                </div>
-                <div>
-                    <div class="text-yellow-500 font-mono text-xs mb-4">04. AUDITABILITY</div>
-                    <h3 class="text-3xl font-serif text-white mb-6">Cryptographic Truth</h3>
-                    <p class="text-gray-400 mb-8 text-lg leading-relaxed">
-                        Every decision is cryptographically signed and hashed. Generate Zero-Knowledge Proofs (ZKP) to prove compliance to auditors without exposing sensitive PII data.
-                    </p>
-                    <div class="bg-white/5 rounded-lg p-6 border border-white/10 font-mono text-sm space-y-4">
-                        <div class="flex justify-between items-center opacity-50">
-                            <span>Legacy GRC</span>
-                            <span class="text-red-400 text-xs">EDITABLE SQL LOGS</span>
-                        </div>
-                        <div class="flex justify-between items-center opacity-50">
-                            <span>Public AI</span>
-                            <span class="text-red-400 text-xs">NO AUDIT TRAIL</span>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-white/10">
-                            <span class="text-white font-bold">Finch OS</span>
-                            <span class="text-yellow-500 font-bold text-xs">IMMUTABLE CHAIN</span>
-                        </div>
-                    </div>
-                </div>
+    <!-- SCALE WITHOUT FEAR (NEW SECTION) -->
+    <section class="py-24 px-8 border-b border-border">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl text-white mb-4">Scale Without Fear</h2>
+                <p class="text-gray-400 font-light max-w-2xl mx-auto">
+                    Traditional compliance is a bottleneck. Finch turns it into scalable infrastructure. <br>
+                    Grow your volume 10x without growing your headcount 10x.
+                </p>
             </div>
-
-            <!-- Block 5: Learning Memory -->
-            <div class="grid md:grid-cols-2 gap-12 items-center py-16 border-b border-white/5">
-                <div class="order-2 md:order-1">
-                    <div class="text-blue-400 font-mono text-xs mb-4">05. ADAPTABILITY</div>
-                    <h3 class="text-3xl font-serif text-white mb-6">Learning Memory</h3>
-                    <p class="text-gray-400 mb-8 text-lg leading-relaxed">
-                        The system learns from your officers. When you override an AI recommendation, Finch adjusts its weights. It doesn't just get smarter—it gets smarter about *your* business.
+            
+            <div class="grid md:grid-cols-3 gap-12">
+                <!-- Point 1 -->
+                <div class="border-t border-border pt-8">
+                    <div class="font-mono text-5xl text-gray-800 mb-6">01</div>
+                    <h3 class="text-2xl font-serif text-white mb-4">Decouple Growth from Headcount</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Legacy systems require 1 new officer for every N transactions. With Finch, your compliance capacity scales elastically with compute, not payroll.
                     </p>
-                    <div class="bg-white/5 rounded-lg p-6 border border-white/10 font-mono text-sm space-y-4">
-                        <div class="flex justify-between items-center opacity-50">
-                            <span>Legacy GRC</span>
-                            <span class="text-red-400 text-xs">DOES NOT LEARN</span>
-                        </div>
-                        <div class="flex justify-between items-center opacity-50">
-                            <span>Public AI</span>
-                            <span class="text-red-400 text-xs">LEARNS GLOBALLY</span>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-white/10">
-                            <span class="text-white font-bold">Finch OS</span>
-                            <span class="text-blue-400 font-bold text-xs">PERSONALIZED WEIGHTS</span>
-                        </div>
-                    </div>
                 </div>
-                <div class="order-1 md:order-2 h-64 bg-gradient-to-br from-blue-900/20 to-brand-surface rounded-xl border border-white/10 flex items-center justify-center">
-                    <div class="text-6xl">🎓 📈</div>
-                </div>
-            </div>
 
-            <!-- Block 6: Time to Value -->
-            <div class="grid md:grid-cols-2 gap-12 items-center py-16">
-                <div class="h-64 bg-gradient-to-br from-red-900/20 to-brand-surface rounded-xl border border-white/10 flex items-center justify-center">
-                    <div class="text-6xl">🚀 ⏱️</div>
-                </div>
-                <div>
-                    <div class="text-red-400 font-mono text-xs mb-4">06. VELOCITY</div>
-                    <h3 class="text-3xl font-serif text-white mb-6">Days, Not Years</h3>
-                    <p class="text-gray-400 mb-8 text-lg leading-relaxed">
-                        Legacy implementation takes 18 months. Finch deploys in hours. Pre-built integrations with SumSub, Veriff, and Jumio let you run in "Shadow Mode" immediately.
+                <!-- Point 2 -->
+                <div class="border-t border-border pt-8">
+                    <div class="font-mono text-5xl text-gray-800 mb-6">02</div>
+                    <h3 class="text-2xl font-serif text-white mb-4">Instant Geo-Expansion</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Launching in Chile or Brazil? Just ingest local regulations (PDFs) into the Vault. No need to refactor hard-coded logic for every new jurisdiction.
                     </p>
-                    <div class="bg-white/5 rounded-lg p-6 border border-white/10 font-mono text-sm space-y-4">
-                        <div class="flex justify-between items-center opacity-50">
-                            <span>Legacy GRC</span>
-                            <span class="text-red-400 text-xs">6-18 MONTHS</span>
-                        </div>
-                        <div class="flex justify-between items-center opacity-50">
-                            <span>Public AI</span>
-                            <span class="text-red-400 text-xs">FAST BUT LIMITED</span>
-                        </div>
-                        <div class="flex justify-between items-center pt-2 border-t border-white/10">
-                            <span class="text-white font-bold">Finch OS</span>
-                            <span class="text-red-400 font-bold text-xs">DAYS + INTEGRATIONS</span>
-                        </div>
-                    </div>
+                </div>
+
+                <!-- Point 3 -->
+                <div class="border-t border-border pt-8">
+                    <div class="font-mono text-5xl text-gray-800 mb-6">03</div>
+                    <h3 class="text-2xl font-serif text-white mb-4">Audit Immunity</h3>
+                    <p class="text-sm text-gray-400 leading-relaxed">
+                        Growth attracts scrutiny. Finch generates defensive audit trails and Zero-Knowledge Proofs automatically, so you're ready for regulators 24/7.
+                    </p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Trust Badges -->
-    <section class="py-12 border-y border-white/5 bg-brand-dark">
-        <div class="max-w-7xl mx-auto px-6 text-center">
-            <p class="text-gray-600 font-mono text-xs uppercase tracking-widest mb-8">Enterprise-Grade Security Standards</p>
-            <div class="flex flex-wrap justify-center gap-12 opacity-50 grayscale hover:grayscale-0 transition-all duration-500">
-                <div class="flex items-center gap-2 text-white font-bold text-xl"><span class="text-blue-500">SOC</span>2 Ready</div>
-                <div class="flex items-center gap-2 text-white font-bold text-xl"><span class="text-blue-500">GDPR</span> Compliant</div>
-                <div class="flex items-center gap-2 text-white font-bold text-xl"><span class="text-blue-500">AWS</span> Private Link</div>
-                <div class="flex items-center gap-2 text-white font-bold text-xl"><span class="text-blue-500">ISO</span> 27001</div>
-            </div>
+    <!-- TECHNICAL DATASHEET -->
+    <section class="border-b border-border py-24 px-8 bg-white/[0.02]">
+         <div class="max-w-4xl mx-auto">
+            <h2 class="font-mono text-sm text-gray-500 uppercase tracking-widest mb-12 text-center">
+                System Specifications
+            </h2>
+            <div class="border border-border rounded-lg overflow-hidden">
+                <table class="w-full text-left font-mono text-sm">
+                    <tbody>
+                        <tr class="border-b border-border bg-white/5">
+                            <td class="p-6 text-gray-500 w-1/3">Deployment Topology</td>
+                            <td class="p-6 text-white font-bold">Customer VPC (AWS/Azure) / On-Premise Air-Gapped</td>
+                        </tr>
+                        <tr class="border-b border-border">
+                            <td class="p-6 text-gray-500 w-1/3">Data Egress</td>
+                            <td class="p-6 text-accent font-bold">Zero (Guaranteed by Architecture)</td>
+                        </tr>
+                        <tr class="border-b border-border bg-white/5">
+                            <td class="p-6 text-gray-500 w-1/3">Logic Runtime</td>
+                            <td class="p-6 text-white">Hybrid: Deterministic Python Plugins + Local LLM Inference</td>
+                        </tr>
+                        <tr class="border-b border-border">
+                            <td class="p-6 text-gray-500 w-1/3">Audit Capability</td>
+                            <td class="p-6 text-white">Immutable Ledger + Zero-Knowledge Proofs (zk-SNARKs)</td>
+                        </tr>
+                        <tr class="border-b border-border bg-white/5">
+                            <td class="p-6 text-gray-500 w-1/3">Policy Engine</td>
+                            <td class="p-6 text-white">Real-time Vector RAG (PDF/Docx Ingestion)</td>
+                        </tr>
+                        <tr>
+                            <td class="p-6 text-gray-500 w-1/3">Time-to-Value</td>
+                            <td class="p-6 text-white">Days (Pre-integrated with SumSub, Veriff, Jumio)</td>
+                        </tr>
+                    </tbody>
+                </table>
+             </div>
         </div>
     </section>
 
-    <!-- Footer / Contact -->
-    <section id="contact" class="py-24 bg-brand-surface relative overflow-hidden">
-        <div class="max-w-4xl mx-auto px-6 text-center relative z-10">
-            <h2 class="text-4xl md:text-6xl font-serif text-white mb-8">Secure Your Future.</h2>
-            <p class="text-xl text-gray-400 mb-12">
-                Join the exclusive waiting list for the Finch Sovereign Container. <br>
-                Deploy in days, stay safe forever.
-            </p>
-            <form class="max-w-md mx-auto flex flex-col gap-4">
-                <input type="email" placeholder="work@enterprise.com" class="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-lg text-white focus:border-brand-accent focus:outline-none transition-colors">
-                <button type="button" class="w-full px-6 py-4 bg-brand-accent text-brand-dark font-bold rounded-lg hover:bg-emerald-400 transition-all">
-                    Request Early Access
-                </button>
-            </form>
-            <p class="mt-8 text-xs text-gray-600 font-mono">
-                © 2026 FINCH. All rights reserved. <br>
-                San Francisco • Santiago • London
+    <!-- FOOTER -->
+    <footer class="py-24 px-8 flex flex-col md:flex-row justify-between items-start md:items-center" id="contact">
+        <div>
+            <div class="font-serif text-3xl text-white mb-2">Deploy Finch.</div>
+            <p class="text-gray-500 font-light">
+                <span class="text-accent mr-2">●</span>Rapid Deployment (Days)
             </p>
         </div>
-    </section>
+        <form class="mt-8 md:mt-0 flex flex-col md:flex-row gap-4 w-full md:w-auto">
+            <input type="email" placeholder="ENTERPRISE EMAIL" class="bg-transparent border border-border px-6 py-3 text-white font-mono text-sm w-full md:w-80 focus:border-accent focus:outline-none placeholder:text-gray-700">
+            <button class="bg-white text-black px-8 py-3 font-mono text-sm uppercase font-bold hover:bg-accent hover:text-white transition-colors">
+                Initialize
+            </button>
+        </form>
+    </footer>
+
 </body>
 </html>
